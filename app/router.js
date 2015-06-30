@@ -5,10 +5,12 @@ var Router = Backbone.Router.extend({
 
     index: function() {
         // SMTH
+        var ItemView = new Checkout.Views.Shipping();
+
     }
 });
 
 $(function(){
-    Checkout.router = new Router();
+    // Checkout.Router = new Router();
     Backbone.history.start({pushState: true});
 });
