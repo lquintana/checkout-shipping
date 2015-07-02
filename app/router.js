@@ -1,16 +1,22 @@
 var Router = Backbone.Router.extend({
+
     routes: {
-        '': 'index'
+        "": "index",
+        "shipping": "shipping"
     },
 
     index: function() {
-        // SMTH
-        var ItemView = new Checkout.Views.Shipping();
+        console.log('im in index');
+        var shippingView = new Checkout.Views.Shipping();
+    },
 
+    shipping: function () {
+        // console.log('im in shipping');
+        // var shippingView = new Checkout.Views.Shipping();
     }
 });
 
 $(function(){
-    // Checkout.Router = new Router();
+    Checkout.Router = new Router();
     Backbone.history.start({pushState: true});
 });
