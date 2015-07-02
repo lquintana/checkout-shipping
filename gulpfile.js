@@ -133,6 +133,6 @@ gulp.task('watch', function() {
         'app/**/*.js',
         'mocks/mock.js'
     ], ['js-build']);
-    gulp.watch('app/templates/**/*.hbs', ['js-full']);
+    gulp.watch('app/templates/**/*.hbs', ['js-full','templates']);
     gulp.watch('app/styles/**/*.scss', ['styles-build']);
 });
