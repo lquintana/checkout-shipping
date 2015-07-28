@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+ <head></head> <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="margin: 0; padding: 0;">
+<a href="#" id="image"><img src="http://i.imgur.com/tqBt07O.png" /></a>
+<script>
+
+//Configuración
+//cantidad de tráfico a incluir en la ejecución del script principal 
+var execute = participantIsInSample("100%");
+
+//El resto, ¡no tocar!
+function getGAClientId() {
+//    if (debug) {return 'debug:0001'}
+    console.log("Buscando getGAClientId")   
+    //esta función está en GTM
+    try {
+        var tracker = meli_ga.getAll()[0];
+        return tracker.get('clientId');
+    } catch (e) {
+        return "1992663765.1427391381"; //devuelve un clientID real, para debugging
+        console.log("Error fetching clientId");
+        return undefined;
+    }
+
+};
+
+function participantIsInSample(traffic_percent) {
+    //debería ser que cuando carga la página, lo define y no lo vuelve a preguntar.
+    var id;
+    if ((id = getGAClientId()) != undefined) { // ejecutar solo si existe GAclientId
+        var traffic_percent = arguments[0] || "0%";
+        traffic_percent = parseFloat(traffic_percent) * 100;
+        var id_last_four_digits = id.substr(id.length - 4); // toma los últimos 4 dígitos del clientID de meli_GA, lo cual resulta en 10.000 posibilidades (0000 hasta 9999)
+        console.log("GA Client Id last four digits:" + id_last_four_digits, "traffic_percent:" + traffic_percent/100);
+        if (id_last_four_digits <= traffic_percent) {
+            console.log("participantIsInSample = true; dentro del %")
+            return true;
+        } else {
+            console.log("participantIsInSample = false; fuera de %")
+            return false;
+        }
+    }
+}
+
+if(execute) {
+
+  // Include the UserVoice JavaScript SDK (only needed once on a page)
+  UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='http://widget.uservoice.com/LvIYi9MbAOT6gyzc1w1nw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+  //
+  // UserVoice Javascript SDK developer documentation:
+  // https://www.uservoice.com/o/javascript-sdk
+  //
+
+  // Set colors
+  UserVoice.push(['set', {
+    accent_color: '#448dd6',
+    trigger_color: 'white',
+    trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+  }]);
+
+  // Identify the user and pass traits
+  // To enable, replace sample data with actual user traits and uncomment the line
+  UserVoice.push(['identify', {
+    email:      'juan.perez@ml.com', // User’s email address
+    //name:       'John Doe', // User’s real name
+    //created_at: 1364406966, // Unix timestamp for the date the user signed up
+    id:         '{{Nickname}}', // Optional: Unique id of the user (if set, this should not change)
+    //type:       'Owner', // Optional: segment your users by type
+    //account: {
+    //  id:           123, // Optional: associate multiple users with a single account
+    //  name:         'Acme, Co.', // Account name
+    //  created_at:   1364406966, // Unix timestamp for the date the account was created
+    //  monthly_rate: 9.99, // Decimal; monthly rate of the account
+    //  ltv:          1495.00, // Decimal; lifetime value of the account
+    //  plan:         'Enhanced' // Plan name for the account
+    order_id: '33123'
+    //}
+  }]);
+
+  // Add default trigger to the bottom-right corner of the window:
+  
+  //UserVoice.push(['addTrigger', { 
+  //  mode: 'feedback', 
+  //  trigger_position: 'bottom-right', 
+    //post_suggestion_enabled: false,
+  //  smartvote_enabled: false 
+  //}]);
+  
+  // Or, use your own custom trigger:
+  UserVoice.push(['addTrigger', '#image', { mode: 'contact' }]);
+
+  // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+  //UserVoice.push(['autoprompt', {}]);
+
+  UserVoice.push(['set', {
+    strings: {
+      // Menu items
+      contact_menu_label: 'Ayúdanos a mejorar',
+      // Contact form
+      contact_title: 'Ayúdanos a mejorar', //
+      contact_message_placeholder: 'Cuéntanos qué podríamos mejorar para que encontrar lo que buscas sea más fácil.'
+    }
+  }]);
+
+  function showVoC() {
+    UserVoice.push(['show'//, {
+      //mode: 'contact' // contact, smartvote, satisfaction
+    //}
+    ]);
+  }
+
+}
+</script>
+</body>
+</HTML>

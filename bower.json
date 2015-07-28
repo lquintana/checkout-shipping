@@ -22,7 +22,7 @@
     "backbone.iobind": "~0.4.9"
   },
   "devDependencies": {
-    "jquery-mockjax": "~1.6.2",
+    "jquery-mockjax": "~2.0.1",
     "mock-socket": "~0.4.0"
   }
 }

@@ -1,0 +1,15 @@
+<h2>Formas de entrega</h2>
+
+<ul class="ch-form-options" data-js="shipping">
+    {{#if preferences.local_pick_up}}
+    <li class="ch-form-row" data-js="accord">
+        <input type="radio" name="shipping" value="accord" id="accordShipping" />
+        <label for="accordShipping">Lo acuerdo con el vendedor</label>
+    </li>
+    {{/if}}
+
+    <li class="ch-form-row" data-js="custom">
+        <input type="radio" name="shipping" value="custom" id="customShipping" />
+        <label for="customShipping">Envio a mi domicilio</label>
+    </li>
+</ul>

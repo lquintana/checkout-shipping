@@ -39,9 +39,10 @@ gulp.task('js-build', function() {
         'bower_components/backbone/backbone.js',
         'bower_components/backbone.iobind/backbone.iosync.js',
         'bower_components/backbone.iobind/backbone.iobind.js',
-        'bower_components/jquery-mockjax/jquery.mockjax.js',
+        'bower_components/chico/ui/chico.js',
+        'bower_components/jquery-mockjax/dist/jquery.mockjax.js',
 
-        'mocks/mock.js',
+        'mocks/mocks.js',
         /////// APPLICATION ///////
         // templates
         '.temp/templates.js',
@@ -82,7 +83,10 @@ gulp.task('js-dist', function() {
 
 gulp.task('styles-build', function() {
     gulp.src([
-            'app/styles/*'
+            './bower_components/navigation-boilerplate/dist/mercadolibre/navigation.css',
+            './bower_components/chico/dist/ui/chico.css',
+            './app/styles/*'
+
         ])
         .pipe(sass({
             style: 'expanded'
@@ -131,7 +135,7 @@ gulp.task('watch', function() {
     gulp.watch([
         'app/*.js',
         'app/**/*.js',
-        'mocks/mock.js'
+        'mocks/mocks.js'
     ], ['js-build']);
     gulp.watch('app/templates/**/*.hbs', ['js-full','templates']);
     gulp.watch('app/styles/**/*.scss', ['styles-build']);

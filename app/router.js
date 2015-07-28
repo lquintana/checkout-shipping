@@ -6,13 +6,11 @@ var Router = Backbone.Router.extend({
     },
 
     index: function() {
-        console.log('im in index');
-        var shippingView = new Checkout.Views.Shipping();
+        var shippingModel = new Checkout.Models.Shipping(),
+            shippingView = new Checkout.Views.Shipping({model: shippingModel});
     },
 
     shipping: function () {
-        // console.log('im in shipping');
-        // var shippingView = new Checkout.Views.Shipping();
     }
 });
 

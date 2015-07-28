@@ -8,17 +8,55 @@
     <meta http-equiv="cleartype" content="on"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-    <link rel="shortcut icon" href="http://static.mlstatic.com/org-img/ui/ml/favicon/favicon-1.0.0.ico"/>
+    <link rel="apple-touch-icon" href="60x60-precomposed.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="76x76-precomposed.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="120x120-precomposed.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="152x152-precomposed.png"/>
 
-    <link rel="stylesheet" href="http://static.mlstatic.com/org-img/ch/ui/1.1.1/chico.min.css"/>
+    <!--[if lt IE 9]>
+        <script src="http://static.mlstatic.com/org-img/ch/vendor/html5shiv/html5shiv-3.7.0.js"></script>
+    <![endif]-->
+
+    <!-- if webfonts are supported print: -->
+    <link rel="stylesheet" href="navigation.css"/>
+    <!-- if browser lacks webfont support print: -->
+    <!-- <link rel="stylesheet" href="navigation-fallback.css"> -->
+
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="navigation__large.css"/>
+    <![endif]-->
+
     <link rel="stylesheet" href="build/styles/bundle.css"/>
 </head>
 
 <body>
     <header role="banner" class="nav-header nav-header-lite">
         <div class="nav-bounds">
-            <h1 class="nav-title">Checkout - Shipping</h1>
-            <p class="nav-logo">MercadoLibre</p>
+            <a class="nav-logo" href="/" tabindex="1">MercadoLibre - Donde compras y vendes de todo</a>
+            <!-- Menu - Switch checkbox (Small devices) -->
+            <input type="checkbox" id="nav-header-menu-switch"/>
+            <div class="nav-header-menu-wrapper">
+                <!-- Menu - Hamburger (Small devices) -->
+                <label for="nav-header-menu-switch" aria-controls="nav-header-menu" data-fastClick tabindex="3">
+                    <i class="nav-header-menu-switch-icon"></i>
+                </label>
+                <!-- Menu - Expandable (Logged in) -->
+                <nav id="nav-header-menu">
+                    <div class="nav-header-user">
+                        <label for="nav-header-user-switch" data-fastClick tabindex="4">
+                            <!--[if lt IE 9]><a href="https://myaccount.mercadolibre.com.ar/summary/" rel="nofollow"><![endif]-->
+                            Username <i class="nav-icon-user"></i>
+                            <!--[if lt IE 9]></a><![endif]-->
+                        </label>
+                        <input type="checkbox" id="nav-header-user-switch"/>
+                        <nav class="nav-header-user-layer">
+                            <a href="https://myaccount.mercadolibre.com.ar/summary/" rel="nofollow">Mi cuenta</a>
+                            <a href="https://www.mercadolibre.com/jms/mla/lgz/logout" rel="nofollow">Salir</a>
+                        </nav>
+                    </div>
+                    <a href="http://ayuda.mercadolibre.com.ar/"><i class="nav-icon-help"><span>Ayuda</span></i></a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -27,6 +65,34 @@
         </div>
     </main>
 
+    <footer role="contentinfo" class="nav-footer">
+        <div class="nav-bounds">
+            <!-- Logged in content (small devices) -->
+            <p class="nav-footer-user">Username (<a href="https://www.mercadolibre.com/jms/mla/lgz/logout" rel="nofollow">Salir</a>)</p>
+            <!-- Not logged in content (small devices) -->
+            <!--
+            <p class="nav-footer-user">
+                <a class="nav-footer-registration ch-btn-skin ch-btn-small" href="https://registration.mercadolibre.com.ar/registration/" rel="nofollow">Regístrate</a>
+                <a href="https://www.mercadolibre.com/jms/mla/lgz/login" rel="nofollow">Ingresa</a>
+            </p>
+            -->
+
+            <!-- Each country has different copyrights. Check which copyright you need. -->
+            <div class="nav-footer-primaryinfo">
+                <small class="nav-footer-copyright">© 1999-YYYY MercadoLibre</small>
+
+                <nav class="nav-footer-navigation">
+                    <a href="http://www.mercadolibre.com.ar/seguro_terminos.html">Términos y condiciones</a>
+                    <a href="http://www.mercadolibre.com.ar/seguro_privacidad.html">Políticas de privacidad</a>
+                    <a href="http://ayuda.mercadolibre.com.ar/">Ayuda</a>
+                </nav>
+
+                <a href="#" class="nav-footer-change-device">Versión clásica</a>
+            </div>
+
+            <p class="nav-footer-secondaryinfo">CNPJ n.º 03.007.331/0001-41 / Avenida Marte, 489, Térreo, Parte A / Santana de Parnaíba-SP / CEP: 06541-005 - empresa do grupo MercadoLivre.</p>
+        </div>
+    </footer>
     <script src="build/scripts/bundle.js"></script>
 </body>
 </html>
