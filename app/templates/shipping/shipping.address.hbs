@@ -1,0 +1,14 @@
+<h2>Elige una direccion</h2>
+
+{{#each addresses}}
+    <p>
+        <a href="#shipping/options/{{id}}">
+            {{street}} {{number}} ({{zip_code}})
+        </a>
+
+        <br />
+        {{contact_data}}
+        <br />
+        {{phone_number}}
+    </p>
+{{/each}}

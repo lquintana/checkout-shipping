@@ -16,3 +16,8 @@ $.mockjax({
     url: '/shipping',
     proxy: './mocks/responses/shipping.json'
 });
+
+$.mockjax({
+    url: '/address',
+    proxy: './mocks/responses/addresses.json'
+});

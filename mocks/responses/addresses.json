@@ -1,0 +1,46 @@
+{
+    "addresses": [
+
+        {
+            "id": "001",
+            "street": "calle de testeo",
+            "number": "12345",
+            "zip_code": "1234",
+            "phone_umber": "12345678",
+            "contact_data": "Leandro Quintana"
+        },
+        {
+            "id": "002",
+            "street": "calle de testeo 2",
+            "number": "12345",
+            "zip_code": "1234",
+            "phone_umber": "12345678",
+            "contact_data": "Leandro Quintana"
+        },
+        {
+            "id": "003",
+            "street": "calle de testeo 3",
+            "number": "12345",
+            "zip_code": "1234",
+            "phone_umber": "12345678",
+            "contact_data": "Leandro Quintana"
+        },
+        {
+            "id": "004",
+            "street": "calle de testeo 4",
+            "number": "12345",
+            "zip_code": "1234",
+            "phone_umber": "12345678",
+            "contact_data": "Leandro Quintana"
+        },
+        {
+            "id": "005",
+            "street": "calle de testeo 5",
+            "number": "12345",
+            "zip_code": "1234",
+            "phone_umber": "12345678",
+            "contact_data": "Leandro Quintana"
+        }
+
+    ]
+}

@@ -1,42 +1,11 @@
-{
-"preferences": {
-    "local_pick_up": true,
-    "modes": [
-        "custom",
-        "not_specified"
+{"methods":
+    {
+    "me": false,
+    "custom":[
+        {"name":"test 1","value":13},
+        {"name":"test 2","value":15},
+        {"name":"test 3","value":18}
     ],
-    "services": [],
-    "free_configurations": [],
-    "trusted_user": false,
-    "custom_calculator": false,
-    "distribution_center": null
-},
-"options": [
-        {
-            "id": 18310062,
-            "name": "Normal",
-            "currency_id": "BRL",
-            "list_cost": 13.86,
-            "cost": 13.86,
-            "tracks_shipments_status": "not_verified",
-            "display": "recommended",
-            "speed": {
-                "shipping": 72,
-                "handling": 24
-            }
-        },
-        {
-            "id": 18310061,
-            "name": "Expresso",
-            "currency_id": "BRL",
-            "list_cost": 14.88,
-            "cost": 14.88,
-            "tracks_shipments_status": "not_verified",
-            "display": "always",
-            "speed": {
-                "shipping": 24,
-                "handling": 24
-            }
-        }
-    ]
+    "local_pickup": true
+    }
 }
